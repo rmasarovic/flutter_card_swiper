@@ -37,7 +37,7 @@ void main() {
     test('Swipe event adds ControllerSwipeEvent to the stream', () {
       final controller = CardSwiperController();
       const index = 42;
-
+      const direction = CardSwiperDirection.right;
       expectLater(
         controller.events,
         emits(
@@ -46,7 +46,7 @@ void main() {
         ),
       );
 
-      controller.moveTo(index);
+      controller.moveTo(index,direction);
     });
 
     test('Dispose closes the stream', () {

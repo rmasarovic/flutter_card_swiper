@@ -21,8 +21,8 @@ class CardSwiperController {
   }
 
   // Change the top card to a specific index.
-  void moveTo(int index) {
-    _eventController.add(ControllerMoveEvent(index));
+  void moveTo(int index,CardSwiperDirection direction) {
+    _eventController.add(ControllerMoveEvent(index,direction));
   }
 
   Future<void> dispose() async {

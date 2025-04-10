@@ -182,7 +182,6 @@ class _CardSwiperState<T extends Widget> extends State<CardSwiper>
         default:
           break;
       }
-
       _reset();
     }
   }
@@ -251,7 +250,6 @@ class _CardSwiperState<T extends Widget> extends State<CardSwiper>
   }
 
   void _swipe(CardSwiperDirection direction) {
-    print("${widget.key.toString()} _swipe currentIndex: {$_currentIndex} ");
     if (_currentIndex == null) return;
     _swipeType = SwipeType.swipe;
     _detectedDirection = direction;
@@ -259,13 +257,11 @@ class _CardSwiperState<T extends Widget> extends State<CardSwiper>
   }
 
   void _goBack() {
-    print("${widget.key.toString()} _goBack currentIndex: {$_currentIndex} ");
     _swipeType = SwipeType.back;
     _cardAnimation.animateBack(context);
   }
 
   void _undo() {
-    print("${widget.key.toString()} _undo currentIndex: {$_currentIndex} ");
     if (_directionHistory.isEmpty) return;
     if (_undoableIndex.previousState == null) return;
 
@@ -287,8 +283,7 @@ class _CardSwiperState<T extends Widget> extends State<CardSwiper>
     _cardAnimation.animateUndo(context, direction);
   }
 
-  void _moveTo(int index) {
-    print("${widget.key.toString()} _moveTo currentIndex: {$_currentIndex} ");
+  void _moveTo(int index,) {
     if (index == _currentIndex) return;
     if (index < 0 || index >= widget.cardsCount) return;
 
@@ -298,7 +293,6 @@ class _CardSwiperState<T extends Widget> extends State<CardSwiper>
   }
 
   int numberOfCardsOnScreen() {
-    print("${widget.key.toString()} numberOfCardsOnScreen ${widget.numberOfCardsDisplayed} ");
     if (widget.isLoop) {
       return widget.numberOfCardsDisplayed;
     }

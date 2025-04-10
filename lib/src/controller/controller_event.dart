@@ -15,5 +15,6 @@ class ControllerUndoEvent extends ControllerEvent {
 
 class ControllerMoveEvent extends ControllerEvent {
   final int index;
-  const ControllerMoveEvent(this.index);
+  final CardSwiperDirection direction;
+  const ControllerMoveEvent(this.index,this.direction);
 }
