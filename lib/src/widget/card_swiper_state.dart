@@ -284,9 +284,10 @@ class _CardSwiperState<T extends Widget> extends State<CardSwiper>
   }
 
   void _moveTo(int index,CardSwiperDirection direction) {
-    _directionHistory.add(direction);
+
     if (index == _currentIndex) return;
     if (index < 0 || index >= widget.cardsCount) return;
+    _directionHistory.add(direction);
     setState(() {
       _undoableIndex.state = index;
     });
