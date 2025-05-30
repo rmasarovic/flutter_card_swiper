@@ -289,7 +289,7 @@ class _CardSwiperState<T extends Widget> extends State<CardSwiper>
     if (index < 0 || index >= widget.cardsCount) return;
     _directionHistory.add(direction);
 
-    if((_currentIndex ?? 0 - index).abs() > 1) {
+    if(((_currentIndex ?? 0) - index).abs() > 1) {
       _undoableIndex.state = index - 1;
     }
 
